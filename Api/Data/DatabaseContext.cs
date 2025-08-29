@@ -11,7 +11,7 @@ namespace MinimalAPI.Data
     {
 
         private readonly IConfiguration _configurationAppSettings;
-        public DatabaseContext(DbContextOptions<DatabaseContext> options, IConfiguration configurationAppSettings) : base(options)
+        public DatabaseContext(IConfiguration configurationAppSettings)
         {
             _configurationAppSettings = configurationAppSettings;
         }
