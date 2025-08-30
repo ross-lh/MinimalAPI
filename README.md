@@ -1,6 +1,12 @@
 # DIO - Trilha .NET - Minimal API
 www.dio.me
 
+## Máquina virtual Azure utilizada para o deploy
+![infos básicas e data de criação da VM para realização do deploy da API](docs/img/azure-deploy-vm.png)
+
+## Deploy realizado
+![frontpage da aplicação com deploy realizado com sucesso](docs/img/deployed-api.png)
+
 ## Desafio de projeto
 Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de APIs, da trilha .NET da DIO.
 
