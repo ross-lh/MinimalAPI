@@ -83,15 +83,31 @@ public class Startup
             options.UseMySql(Configuration.GetConnectionString("MySql"),
                 ServerVersion.AutoDetect(Configuration.GetConnectionString("MySql")));
         });
+
+        services.AddCors(options =>
+        {
+            options.AddDefaultPolicy(
+                builder =>
+                {
+                    builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                });
+        });
     }
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         app.UseSwagger();
         app.UseSwaggerUI();
+
         app.UseRouting();
+
         // ALWAYS AuthENTICATION before AuthORIZATION
         app.UseAuthentication();
         app.UseAuthorization();
+
+        app.UseCors();
+
         app.UseEndpoints(endpoints =>
         {
             #region Home
